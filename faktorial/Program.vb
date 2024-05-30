@@ -5,11 +5,13 @@ Module Module1
         Dim cislo As Integer
         Dim vysledek As Integer = 1
 
-        Console.Write("Zadejte celé èíslo (maximálnì 10): ")
+        Console.Write("Zadejte celé èíslo (0 a 10): ")
         cislo = Val(Console.ReadLine())
 
-        If cislo > 10 Then
-            Console.WriteLine("Èíslo je pøíliš velké, faktoriál nelze vypoèítat.")
+        If cislo < 0 Then
+            Console.WriteLine("Záporné èíslo není platné. Zadejte prosím nezáporné celé èíslo.")
+        ElseIf cislo > 10 Then
+            Console.WriteLine("Èíslo je pøíliš velké, faktoriál nelze vypoèítat pro èísla vìtší ne 10.")
         Else
             For x As Integer = 1 To cislo
                 vysledek *= x
